@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ar.com.proyecto.java.entities">
+  <ClassDiagramComponents>
+    <Class name="Bebida" package="ar.com.proyecto.java.entities" visibility="public" xPosition="24.0" yPosition="402.0">
+      <Fields>
+        <Field name="cantLitros" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreMarca"/>
+          <Argument type="double" name="cantLitros"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCantLitros" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cosmetico" package="ar.com.proyecto.java.entities" visibility="public" xPosition="433.0" yPosition="402.0">
+      <Fields>
+        <Field name="contenidoMililitros" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="double" name="contenidoMililitros"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getContenidoMililitros" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Fruta" package="ar.com.proyecto.java.entities" visibility="public" xPosition="618.0" yPosition="198.0">
+      <Fields>
+        <Field name="unidadVenta" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="double" name="precio"/>
+          <Argument type="String" name="unidadVenta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUnidadVenta" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Producto" package="ar.com.proyecto.java.entities" visibility="public" isAbstract="true" xPosition="249.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getPrecio" returnType="double" visibility="public"/>
+        <Method name="compareTo" returnType="int" visibility="public">
+          <Argument type="Producto" name="o"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ar.com.proyecto.java.entities.Cosmetico" target="ar.com.proyecto.java.entities.Producto"/>
+    <IsRelation name="is" source="ar.com.proyecto.java.entities.Fruta" target="ar.com.proyecto.java.entities.Producto"/>
+    <UseRelation source="ar.com.proyecto.java.entities.Producto" target="ar.com.proyecto.java.entities.Producto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ar.com.proyecto.java.entities.Bebida" target="ar.com.proyecto.java.entities.Producto"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
